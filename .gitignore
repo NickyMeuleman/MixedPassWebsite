@@ -1,0 +1,12 @@
+# Dependencies
+.env.development.local
+.env.production.local
+.env.test.local
+yarn-debug.log*
+yarn-error.log*
+npm-debug.log*
+/node_modules
+.env.local
+.DS_Store
+/build
+.env

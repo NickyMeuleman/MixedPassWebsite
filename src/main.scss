@@ -4,7 +4,7 @@
   padding: 0 0 0 0;
 }
 html, body {
-  background: #fdfdfd;
+  background: #fff;
   scroll-behavior: smooth;
   font-family: 'Poppins', sans-serif;
 }
@@ -30,7 +30,7 @@ html, body {
     background: #f2f2f2;
     height: auto;
     width: 88%;
-    margin: 20px 0 0 0;
+    margin: 10px 0 0 0;
     padding: 10px 10px 10px 10px;
     text-align: left;
     z-index: 9;
@@ -38,26 +38,55 @@ html, body {
       cursor: pointer;
       outline: none;
       border: 1px solid #2e2e2e;
+      border-radius: 6px;
       background: #fff;
       color: #2e2e2e;
       margin: 0 10px 0 10px;
       padding: 10px 10px 10px 10px;
       font-size: 1rem;
     }
+    a {
+      float: right;
+      color: #2e2e2e;
+      font-size: 1.7rem;
+      position: relative;
+      top: 4px;
+      &:hover {
+        color: #3a4eff;
+      }
+    }
   }
   .genPassContainer {
     background: #f9f9f9;
     color: #c6c6cf;
     width: 90%;
-    padding: 100px 0 100px 0;
+    padding: 50px 0 50px 0;
+    p {
+      color: #2e2e2e;
+      font-size: 1.7rem;
+      font-weight: bold;
+      .down {
+        animation: bounce 1s linear infinite;
+        color: #2e2e2e;
+        margin: 0 0 10px 0;
+        font-size: 3rem;
+      }
+      .star {
+        animation: spin 2s linear infinite;
+        color: #ffef00;
+        position: relative;
+        top: 2px;
+      }
+    }
     input {
       outline: none;
       border: 4px solid #e6e6ef;
-      border-radius: 50px;
+      border-radius: 6px;
       background: #fff;
       color: #2e2e2e;
       height: 30px;
       width: 90%;
+      margin: 0 0 20px 0;
       padding: 10px 10px 10px 10px;
       font-size: .95rem;
     }
@@ -66,10 +95,11 @@ html, body {
       outline: none;
       display: inline-block;
       border: none;
+      border-radius: 6px;
       background: #3a4eff;
       box-shadow: 0 5px 15px 0 #a6a6af;
       color: #fff;
-      margin: 20px 10px 0 10px;
+      margin: 0 10px 0 10px;
       padding: 15px 25px 15px 25px;
       font-size: 1.05rem;
       font-weight: bold;
@@ -78,6 +108,32 @@ html, body {
       &:hover {
         box-shadow: none;
       }
+      .ico {
+        position: relative;
+        top: 2px;
+      }
+    }
+  }
+  @keyframes bounce {
+    0% {
+      position: relative;
+      top: 0;
+    }
+    50% {
+      position: relative;
+      top: 10px;
+    }
+    100% {
+      position: relative;
+      top: 20px;
+    }
+  }
+  @keyframes spin {
+    0% {
+      transform: none;
+    }
+    100% {
+      transform: rotate(360deg);
     }
   }
   @media screen and (min-width: 200px) and (max-width: 600px){

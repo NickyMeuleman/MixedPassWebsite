@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { FaLock, FaLockOpen } from 'react-icons/fa';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { Spring, config, animated } from 'react-spring/renderprops';
+import { FaLock, FaLockOpen, FaChevronDown, FaCopy, FaGithub, FaStar } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 import './main.scss';
 
@@ -49,8 +49,10 @@ export const Index = () => {
               <option value='40'>40 Characters Long</option>
               <option value='50'>50 Characters Long</option>
             </select>
+            <a href='https://github.com/mixedbitmedia/MixedPassWebsite' title='View Project On GitHub!' target='_blank' rel='noopener noreferrer'><FaGithub /></a>
           </div>
           <div className='genPassContainer'>
+            {Gen ? <p style={{ color: '#32cd32', margin: '0 0 20px 0' }}><FaStar className='star' /> New password generated! <FaStar className='star' /></p> : <p>Click the button below to generate a secure password! <br /> <FaChevronDown className='down' /></p>}
             {Gen ? <Spring native config={ config.slow } from={{ opacity: 0 }} to={{ opacity: 1 }}>
               {props => <animated.div style={ props }>
                 <input type='text' value={ Password } className='pass' readOnly />
@@ -61,7 +63,7 @@ export const Index = () => {
                 icon: 'success',
                 title: 'Success!',
                 text: 'Password Has Been Copied To Your Clipboard!'
-              }) : null } className='btn'>Copy To Clipboard!</button>
+              }) : null } className='btn'><FaCopy className='ico' /> Copy To Clipboard!</button>
             </CopyToClipboard> : null}
             <span>{Gen ? '|' : null}</span>
             <button onClick={ () => setPassword(PasswordGen()) } className='btn'>{Gen ? 'Generate New Password!' : 'Generate Password!'}</button>

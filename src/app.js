@@ -13,11 +13,11 @@ export const Index = () => {
     let length = document.getElementById('length').value;
     // Default Password Character Length If No Lenth Selected By User
     if(document.getElementById('length').value === 'Password Length'){
-      length = 5;
+      length = 10;
     }
     let charset = '';
     // Set Default Characters Value Based On User Prams
-    if(document.getElementById('special').value === 'No' || document.getElementById('special').value === 'Add Special Chars'){
+    if(document.getElementById('special').value === 'No' || document.getElementById('special').value === 'Add Special Characters'){
       charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
     }else {
       charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789?><.,+=-_{}[]:;"|/!@#$%^&*()';
@@ -37,21 +37,16 @@ export const Index = () => {
           <h1>{Gen ? <FaLock className='ico' /> : <FaLockOpen className='ico' />} MIXEDPASS</h1>
           <div className='nav'>
             <select name='special' id='special'>
-              <option value='Add Special Chars'>Add Special Chars</option>
+              <option value='Add Special Characters'>Add Special Characters</option>
               <option value='Yes'>Yes</option>
               <option value='No'>No</option>
             </select>
             <select name='length' id='length'>
               <option value='Password Length'>Password Length</option>
-              <option value='5'>5 Characters Long</option>
               <option value='10'>10 Characters Long</option>
-              <option value='15'>15 Characters Long</option>
               <option value='20'>20 Characters Long</option>
-              <option value='25'>25 Characters Long</option>
               <option value='30'>30 Characters Long</option>
-              <option value='35'>35 Characters Long</option>
               <option value='40'>40 Characters Long</option>
-              <option value='45'>45 Characters Long</option>
               <option value='50'>50 Characters Long</option>
             </select>
           </div>
@@ -68,7 +63,7 @@ export const Index = () => {
                 text: 'Password Has Been Copied To Your Clipboard!'
               }) : null } className='btn'>Copy To Clipboard!</button>
             </CopyToClipboard> : null}
-            {Gen ? '|' : null}
+            <span>{Gen ? '|' : null}</span>
             <button onClick={ () => setPassword(PasswordGen()) } className='btn'>{Gen ? 'Generate New Password!' : 'Generate Password!'}</button>
           </div>
         </div>

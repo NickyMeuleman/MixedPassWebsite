@@ -1,19 +1,19 @@
 <h1 align="center">
-  MixedPass
+  MixedPassWebsite
 </h1>
 
 <h3 align="center">
   A minimal ReactJS application to generate a password.
 </h3>
 <p align="center">
-  MixedPass is free and open source project written in ReactJS
+  MixedPassWebsite is free and open source project written in ReactJS
 </p>
 
 <p><b>
   Project Visitors:
 </b></p>
 
-![Visitor Count](https://profile-counter.glitch.me/MixedPass/count.svg)
+![Visitor Count](https://profile-counter.glitch.me/MixedPassWebsite/count.svg)
 
 [**Learn how to use ReactJS for your next project.**](https://reactjs.org/docs/getting-started.html)
 
@@ -27,7 +27,7 @@
 1. **Clone this Repo.**
 
    ```shell
-   git clone https://github.com/mixedbitmedia/MixedPass.git
+   git clone https://github.com/mixedbitmedia/MixedPassWebsite.git
 
    ```
 
@@ -36,7 +36,7 @@
    Move into the projects directory:
 
    ```shell
-   cd /MixedPass
+   cd /MixedPassWebsite
    yarn
    ```
 

@@ -11,12 +11,12 @@ export const Index = () => {
   const [Password, setPassword] = useState('');
   const PasswordGen = () => {
     let length = document.getElementById('length').value;
-    // Default Password Length To 10 Chars If No Lenth Selected By User
+    // Default Password Character Length If No Lenth Selected By User
     if(document.getElementById('length').value === 'Password Length'){
-      length = 10;
+      length = 5;
     }
     let charset = '';
-    // Set Default Chars Value Based On User Prams
+    // Set Default Characters Value Based On User Prams
     if(document.getElementById('special').value === 'No' || document.getElementById('special').value === 'Add Special Chars'){
       charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
     }else {
@@ -43,11 +43,16 @@ export const Index = () => {
             </select>
             <select name='length' id='length'>
               <option value='Password Length'>Password Length</option>
-              <option value='10'>10 Char Long</option>
-              <option value='20'>20 Char Long</option>
-              <option value='30'>30 Char Long</option>
-              <option value='40'>40 Char Long</option>
-              <option value='50'>50 Char Long</option>
+              <option value='5'>5 Characters Long</option>
+              <option value='10'>10 Characters Long</option>
+              <option value='15'>15 Characters Long</option>
+              <option value='20'>20 Characters Long</option>
+              <option value='25'>25 Characters Long</option>
+              <option value='30'>30 Characters Long</option>
+              <option value='35'>35 Characters Long</option>
+              <option value='40'>40 Characters Long</option>
+              <option value='45'>45 Characters Long</option>
+              <option value='50'>50 Characters Long</option>
             </select>
           </div>
           <div className='genPassContainer'>
@@ -60,7 +65,7 @@ export const Index = () => {
               <button onClick={ Copied ? Swal.fire({
                 icon: 'success',
                 title: 'Success!',
-                text: 'Your Password Has Been Copied To Your Clipboard!'
+                text: 'Password Has Been Copied To Your Clipboard!'
               }) : null } className='btn'>Copy To Clipboard!</button>
             </CopyToClipboard> : null}
             {Gen ? '|' : null}

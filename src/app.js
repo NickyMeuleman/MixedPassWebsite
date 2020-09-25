@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { Spring, config, animated } from 'react-spring/renderprops';
-import { FaLock, FaLockOpen, FaChevronDown, FaCopy, FaGithub, FaStar } from 'react-icons/fa';
+import { FaLock, FaLockOpen, FaChevronDown, FaCopy, FaGithub, FaStar } from 'react-icons/fa'
+import { FiGlobe } from 'react-icons/fi';
 import Swal from 'sweetalert2';
 import './main.scss';
 
@@ -11,17 +12,13 @@ export const Index = () => {
   const [Password, setPassword] = useState('');
   const PasswordGen = () => {
     let length = document.getElementById('length').value;
-    // Default Password Character Length If No Lenth Selected By User
+    // Default Password Length If No Length Selected By User
     if(document.getElementById('length').value === 'Password Length'){
       length = 10;
     }
     let charset = '';
     // Set Default Characters Value Based On User Prams
-    if(document.getElementById('special').value === 'No' || document.getElementById('special').value === 'Add Special Characters'){
-      charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-    }else {
-      charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789?><.,+=-_{}[]:;"|/!@#$%^&*()';
-    }
+    document.getElementById('special').value === 'No' || document.getElementById('special').value === 'Add Special Characters' ? charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789' : charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789?><.,+=-_{}[]:;"|/!@#$%^&*()';
     let val = '';
     for(var i = 0; i < length; ++i){
       val += charset.charAt(Math.floor(Math.random() * charset.length));
@@ -50,6 +47,7 @@ export const Index = () => {
               <option value='50'>50 Characters Long</option>
             </select>
             <a href='https://github.com/mixedbitmedia/MixedPassWebsite' title='View Project On GitHub!' target='_blank' rel='noopener noreferrer'><FaGithub /></a>
+            <a href='https://mixedbitmedia.com' title='View Mixedbitmedia!' target='_blank' rel='noopener noreferrer'><FiGlobe /></a>
           </div>
           <div className='genPassContainer'>
             {Gen ? <p style={{ color: '#32cd32', margin: '0 0 20px 0' }}><FaStar className='star' /> New password generated! <FaStar className='star' /></p> : <p>Click the button below to generate a secure password! <br /> <FaChevronDown className='down' /></p>}
